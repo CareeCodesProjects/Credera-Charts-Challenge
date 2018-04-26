@@ -3,21 +3,31 @@
 <html>
     <head>
         <title>Credera | SecureCo Dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
         <header>
-            <nav>
-                <img src="http://via.placeholder.com/50x50" alt="SecureCo"/>
-                <button type="button">Devices</button>
-                <button type="button">Assessments</button>
-                <button type="button">Administration</button>
-                <button type="button">Toolbox</button>
+            <nav class="container-fluid">
+                <div class="col-md-6">
+                    <img src="http://via.placeholder.com/50x50" alt="SecureCo"/>
+                </div>
+                <div class="col-md-6">
+                    <button type="button">Devices</button>
+                    <button type="button">Assessments</button>
+                    <button type="button">Administration</button>
+                    <button type="button">Toolbox</button>
+                </div>
             </nav>
-            <div>
-                <span>Enterprise Domain Name</span>
-                <input type="text" placeholder="Search In Domain"/>
-                <button type="button">Search Icon</button>
-                <div>
+            <div class="container-fluid">
+                <div class="col-md-2">
+                    Enterprise Domain Name
+                </div>
+                <div class="col-md-3">
+                    <input type="text" placeholder="Search In Domain"/>
+                    <button type="button">Search Icon</button>
+                </div>
+                <div class="col-md-7">
                     <button type="button">
                         <span aria-hidden="true"></span>
                         <span>Meter Icon</span>
@@ -34,11 +44,15 @@
             </div>
         </header>
         <main>
-            <section>Chart 1</section>
-            <section>Chart 2</section>
-            <section>Table 1</section>
-            <section>Table 2</section>
-            <section>Table 3</section>
+            <div class="container-fluid">
+                <section class="col-md-6">Chart 1</section>
+                <section class="col-md-6">Chart 2</section>
+            </div>
+            <div class="container-fluid">
+                <section class="col-md-4">Table 1</section>
+                <section class="col-md-4">Table 2</section>
+                <section class="col-md-4">Table 3</section>                
+            </div>
         </main>
     </body>
 </html>
