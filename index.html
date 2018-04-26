@@ -5,10 +5,11 @@
         <title>Credera | SecureCo Dashboard</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     </head>
     <body>
         <header>
-            <nav class="container-fluid">
+            <nav class="container-fluid main-nav">
                 <div class="col-md-6">
                     <img src="http://via.placeholder.com/50x50" alt="SecureCo"/>
                 </div>
@@ -19,34 +20,42 @@
                     <button type="button">Toolbox</button>
                 </div>
             </nav>
-            <div class="container-fluid">
+            <div class="container-fluid sub-nav">
                 <div class="col-md-2">
                     Enterprise Domain Name
                 </div>
                 <div class="col-md-3">
                     <input type="text" placeholder="Search In Domain"/>
-                    <button type="button">Search Icon</button>
+                    <button type="button" class="fas fa-search">
+                        <span class="hidden-text">Search In Domain</span>
+                    </button>
                 </div>
                 <div class="col-md-7">
                     <button type="button">
-                        <span aria-hidden="true"></span>
-                        <span>Meter Icon</span>
+                        <span class="fas fa-tachometer-alt" aria-hidden="true"></span>
+                        <span class="hidden-text">Metrics</span>
                     </button>
                     <button type="button">
-                        <span aria-hidden="true"></span>
-                        <span>List Icon</span>
+                        <span class="fas fa-list" aria-hidden="true"></span>
+                        <span class="hidden-text">Detail View</span>
                     </button>
                     <button type="button">
-                        <span aria-hidden="true"></span>
-                        <span>Fork Icon</span>
+                        <span class="fas fa-code-branch" aria-hidden="true"></span>
+                        <span class="hidden-text">Source Code</span>
                     </button>
                 </div>
             </div>
         </header>
         <main>
             <div class="container-fluid">
-                <section class="col-md-6">Chart 1</section>
-                <section class="col-md-6">Chart 2</section>
+                <section class="col-md-6">
+                    <canvas id="stackedChartCanvas" width="800"></canvas>
+                </section>
+                <section class="col-md-6">
+                    <div id="app">
+                        <highcharts :options="options" ref="highcharts"></highcharts>
+                    </div>
+                </section>
             </div>
             <div class="container-fluid">
                 <section class="col-md-4">Table 1</section>
@@ -54,5 +63,10 @@
                 <section class="col-md-4">Table 3</section>                
             </div>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script src="https://unpkg.com/highcharts/highcharts.js"></script>
+        <script src="https://unpkg.com/vue-highcharts/dist/vue-highcharts.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>

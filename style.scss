@@ -1,0 +1,29 @@
+$thunder: #231F20;
+$mine-shaft: #3F3E3E;
+$silver: #BCBCBC;
+$wild-sand: #F5F5F5;
+$curious-blue: #2B97CF;
+$jelly-bean: #2B85B3;
+$polar: #ECF6FB;
+$sandy-brown: #F3906E;
+$cape-honey: #FEE1A8;
+$viking: #66B8DF;
+$feijoa: #B8D988;
+
+.main-nav {
+    background-color: $thunder;
+}
+
+.sub-nav {
+    background-color: $curious-blue;
+}
+
+// Accessibility
+.hidden-text {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
