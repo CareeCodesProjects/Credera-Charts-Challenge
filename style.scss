@@ -1,3 +1,7 @@
+// Imports
+@import "reset";
+
+// Color Palette
 $thunder: #231F20;
 $mine-shaft: #3F3E3E;
 $silver: #BCBCBC;
@@ -5,25 +9,178 @@ $wild-sand: #F5F5F5;
 $curious-blue: #2B97CF;
 $jelly-bean: #2B85B3;
 $polar: #ECF6FB;
+$tangerine: #EA8636;
+
 $sandy-brown: #F3906E;
 $cape-honey: #FEE1A8;
 $viking: #66B8DF;
 $feijoa: #B8D988;
 
+// Mixins and Utilities
+@mixin arrow-down($arrow-color, $arrow-size){
+    width: 0; 
+    height: 0; 
+    border-left: $arrow-size solid transparent;
+    border-right: $arrow-size solid transparent;  
+    border-top: calc(#{$arrow-size}*1.5) solid $arrow-color;
+}
+
+// Base
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+// Navigation Elements
 .main-nav {
+    align-items: center;
     background-color: $thunder;
+    display: flex;
+    padding: 12px 10px;
+}
+
+.main-nav-buttons {
+    text-align: right;
+}
+
+.nav-logo {
+    height: 40px;
+}
+
+.nav-button {
+    border-radius: 5px;
+    border: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    position: relative;
+    text-transform: uppercase;
+
+    &--accent {
+        background-color: $tangerine;
+        color: #FFF;
+    }
+
+    &--default {
+        background-color: $mine-shaft;
+        color: $silver;
+    }
+
+    &--combobox {
+        padding-right: 40px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 28px;
+            top: calc(50% - 2px);
+            @include arrow-down($silver, 3px);
+        }
+    }
+
+    &--combobox-before {
+        padding-left: 40px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: calc(50% - 2px);
+            @include arrow-down(#FFF, 3px);
+        }
+    }
+}
+
+.nav-button-group > .nav-button {
+    margin: 0 5px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
 }
 
 .sub-nav {
+    align-items: center;
     background-color: $curious-blue;
+    color: #FFF;
+    display: flex;
+    padding: 10px 10px;
+}
+
+.sub-nav-searchbar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    & > div:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    .searchbar-container {
+        display: flex;
+    }
+
+    .domain-search-input {
+        background-color: lighten($silver, 15%);
+        border: none;
+        border-radius: 5px;
+        color: $thunder;
+        font-size: 10px;
+        margin-right: 5px;
+        padding: 8px;
+        width: 200px;
+    }
+
+    .domain-search-button {
+        background-color: darken($curious-blue, 8%);
+        border-radius: 5px;
+        border: none;
+        font-size: 12px;
+        height: 30px;
+        width: 30px;
+        
+        &:hover {
+            background-color: darken($curious-blue, 12%);
+        }
+    }
+}
+
+.sub-nav-options {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.toggle-button-container {
+    display: flex;
+}
+
+.toggle-button-container > button {
+    background-color: darken($curious-blue, 8%);
+    border: none;
+    font-size: 12px;
+    height: 30px;
+    margin: 0;
+    width: 30px;
+    
+    &:first-child {
+        border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+        border-radius: 0 5px 5px 0;
+    }
+
+    &:hover {
+        background-color: darken($curious-blue, 12%);
+    }
 }
 
 // Accessibility
 .hidden-text {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }

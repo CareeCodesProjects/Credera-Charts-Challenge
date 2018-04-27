@@ -6,43 +6,47 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <link rel="stylesheet" href="style.css"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
     <body>
         <header>
-            <nav class="container-fluid main-nav">
+            <nav class="main-nav container-fluid">
                 <div class="col-md-6">
-                    <img src="http://via.placeholder.com/50x50" alt="SecureCo"/>
+                    <img class="nav-logo" src="assets/logo.png" alt="SecureCo"/>
                 </div>
-                <div class="col-md-6">
-                    <button type="button">Devices</button>
-                    <button type="button">Assessments</button>
-                    <button type="button">Administration</button>
-                    <button type="button">Toolbox</button>
+                <div class="nav-button-group main-nav-buttons col-md-6">
+                    <button class="nav-button nav-button--default nav-button--combobox" type="button">Devices</button>
+                    <button class="nav-button nav-button--default nav-button--combobox" type="button">Assessments</button>
+                    <button class="nav-button nav-button--default nav-button--combobox" type="button">Administration</button>
+                    <button class="nav-button nav-button--accent nav-button--combobox-before" type="button">Toolbox</button>
                 </div>
             </nav>
-            <div class="container-fluid sub-nav">
-                <div class="col-md-2">
-                    Enterprise Domain Name
+            <div class="sub-nav container-fluid">
+                <div class="col-md-6 sub-nav-searchbar">
+                    <div>Enterprise Domain Name</div>
+                    <div class="searchbar-container">
+                        <label for="domain_search_input" class="hidden-text">Search In Domain</label>
+                        <input id="domain_search_input" class="domain-search-input" type="text" placeholder="Search In Domain"/>
+                        <button type="button" class="fas fa-search domain-search-button">
+                            <span class="hidden-text">Search In Domain</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <input type="text" placeholder="Search In Domain"/>
-                    <button type="button" class="fas fa-search">
-                        <span class="hidden-text">Search In Domain</span>
-                    </button>
-                </div>
-                <div class="col-md-7">
-                    <button type="button">
-                        <span class="fas fa-tachometer-alt" aria-hidden="true"></span>
-                        <span class="hidden-text">Metrics</span>
-                    </button>
-                    <button type="button">
-                        <span class="fas fa-list" aria-hidden="true"></span>
-                        <span class="hidden-text">Detail View</span>
-                    </button>
-                    <button type="button">
-                        <span class="fas fa-code-branch" aria-hidden="true"></span>
-                        <span class="hidden-text">Source Code</span>
-                    </button>
+                <div class="col-md-6 sub-nav-options">
+                    <div class="toggle-button-container">
+                        <button type="button">
+                            <span class="fas fa-tachometer-alt" aria-hidden="true"></span>
+                            <span class="hidden-text">Metrics</span>
+                        </button>
+                        <button type="button">
+                            <span class="fas fa-list" aria-hidden="true"></span>
+                            <span class="hidden-text">Detail View</span>
+                        </button>
+                        <button type="button">
+                            <span class="fas fa-code-branch" aria-hidden="true"></span>
+                            <span class="hidden-text">Source Code</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
