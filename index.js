@@ -155,7 +155,7 @@ window.chartColors = {
 var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		var color = Chart.helpers.color;
 		var horizontalBarChartData = {
-			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			labels: ['DST', 'SSG20_Internal', 'CustFW1', 'MGMT_Server', '143-CBY-JDY'],
 			datasets: [{
 				label: 'Low',
 				backgroundColor: window.chartColors.feijoa,
@@ -306,7 +306,7 @@ var config = {
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart - Different point sizes'
+      text: 'Configuration Assessment SCI Scoring (12 Month History)'
     }
   }
 };
@@ -330,7 +330,7 @@ window.onload = function() {
       },
       title: {
         display: true,
-        text: 'Chart.js Horizontal Bar Chart'
+        text: 'Control Failures by Device (Top 5)'
       },
       scales: {
         xAxes: [{
