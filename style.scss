@@ -25,6 +25,16 @@ $feijoa: #B8D988;
     border-top: calc(#{$arrow-size}*1.5) solid $arrow-color;
 }
 
+// Accessibility
+.hidden-text {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 // Base
 body {
     font-family: 'Open Sans', sans-serif;
@@ -104,6 +114,10 @@ body {
 
 }
 
+.filter-link {
+    display: none;
+}
+
 .sub-nav {
     align-items: center;
     background-color: $curious-blue;
@@ -178,16 +192,6 @@ body {
     &:hover {
         background-color: darken($curious-blue, 12%);
     }
-}
-
-// Accessibility
-.hidden-text {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
 }
 
 // Data Sections
@@ -271,6 +275,10 @@ tbody tr {
 
     .hamburger-button {
         color: white;
+    }
+
+    .filter-link {
+        display: block;
     }
 
     .hamburger-menu-items {
