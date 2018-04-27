@@ -42,6 +42,11 @@ body {
     text-align: right;
 }
 
+.nav-hamburger-menu,
+.hamburger-menu-items {
+    display: none;
+}
+
 .nav-logo {
     height: 40px;
 }
@@ -186,13 +191,16 @@ body {
 }
 
 // Data Sections
+.data-section {
+    margin: 25px 0;
+}
 .data-section-title {
     background-color: $wild-sand;
     display: flex;
     font-size: 12px;
     justify-content: space-between;
-    padding: 10px 12px;
     margin: 10px 0;
+    padding: 10px 12px;
 }
 
 // Tables
@@ -209,8 +217,23 @@ tr, td, th {
     padding: 8px 12px;
 }
 
+th:nth-child(2),
+td:nth-child(2) {
+    text-align: center;
+}
+
+th:last-child,
+td:last-child {
+    text-align: right;
+}
+
 tbody tr {
     border-bottom: 1px solid darken($polar, 5%);
+}
+
+.random-dot-header,
+.random-dot-header:last-child {
+    text-align: center;
 }
 
 .random-dot::before {
@@ -218,6 +241,29 @@ tbody tr {
     display: block;
     width: 5px;
     height: 5px;
-    background: $tangerine;
+    background: #000;
     border-radius: 10px;
+    margin: 0 auto;
+}
+
+.random-dot--viking::before {
+    background: $viking;
+}
+
+.random-dot--feijoa::before {
+    background: $feijoa;
+}
+
+.random-dot--sandy-brown::before {
+    background: $sandy-brown;
+}
+
+// Custom Media Queries
+@media screen and (max-width: 800px) {
+    .nav-button-group {
+        display: none;
+    }
+    .nav-hamburger-menu {
+        display: block;
+    }
 }

@@ -11,14 +11,25 @@
     <body>
         <header>
             <nav class="main-nav container-fluid">
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <img class="nav-logo" src="assets/logo.png" alt="SecureCo"/>
                 </div>
-                <div class="nav-button-group main-nav-buttons col-md-6">
+                <div class="nav-button-group main-nav-buttons col-md-9">
                     <button class="nav-button nav-button--default nav-button--combobox" type="button">Devices</button>
                     <button class="nav-button nav-button--default nav-button--combobox" type="button">Assessments</button>
                     <button class="nav-button nav-button--default nav-button--combobox" type="button">Administration</button>
                     <button class="nav-button nav-button--accent nav-button--combobox-before" type="button">Toolbox</button>
+                </div>
+                <div class="nav-hamburger-menu main-nav-buttons col-md-9">
+                    <div id="hamburger_button" class="fas fa-bars">
+                        <span class="hidden-text">Menu</span>
+                    </div>
+                    <div class="hamburger-menu-items">
+                        <a href="#">Devices</a>
+                        <a href="#">Assessments</a>
+                        <a href="#">Administration</a>
+                        <a href="#">Toolbox</a>
+                    </div>
                 </div>
             </nav>
             <div class="sub-nav container-fluid">
@@ -52,14 +63,16 @@
         </header>
         <main>
             <div class="container-fluid">
-                <section class="col-md-6">
+                <section class="data-section col-md-6">
+                    <div class="data-section-title">Control Failures by Device (Top 5)</div>
                     <canvas id="chart_1" class="chartjs-render-monitor" style="display: block; height: 150px; width: 300px;"></canvas>                </section>
-                <section class="col-md-6">
+                <section class="data-section col-md-6">
+                    <div class="data-section-title">Configuration Assessment SCI Scoring (12 Month History)</div>
                     <canvas id="chart_2" class="chartjs-render-monitor" style="display: block; height: 301px; width: 602px;"></canvas>
                 </section>
             </div>
             <div class="container-fluid">
-                <section class="col-md-4">
+                <section class="data-section col-md-4">
                     <div class="data-section-title data-section-title--table">
                         <h3>Devices Needing Attention</h3>
                         <a href="#">View All &raquo;</a>
@@ -68,9 +81,9 @@
                         <thead>
                             <tr>
                                 <th>Device</th>
-                                <th>Change</th>
-                                <th>Retrieval</th>
-                                <th>Log</th>
+                                <th class="random-dot-header">Change</th>
+                                <th class="random-dot-header">Retrieval</th>
+                                <th class="random-dot-header">Log</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -107,7 +120,7 @@
                         </tbody>
                     </table>
                 </section>
-                <section class="col-md-4">
+                <section class="data-section col-md-4">
                     <div class="data-section-title data-section-title--table">
                         <h3>Recently Changed Devices</h3>
                         <a href="#">View All &raquo;</a>
@@ -149,8 +162,8 @@
                             </tbody>
                         </table>
                 </section>
-                <section class="col-md-4">
-                    <div class="data-section-title data-section-title--table">
+                <section class="data-section col-md-4">
+                    <div class="data-section-title">
                         <h3>Devices By Rule Count</h3>
                         <a href="#">View All &raquo;</a>
                     </div>

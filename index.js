@@ -304,10 +304,6 @@ var config = {
         }
       }]
     },
-    title: {
-      display: true,
-      text: 'Configuration Assessment SCI Scoring (12 Month History)'
-    }
   }
 };
 
@@ -326,11 +322,7 @@ window.onload = function() {
       },
       responsive: true,
       legend: {
-        position: 'right',
-      },
-      title: {
-        display: true,
-        text: 'Control Failures by Device (Top 5)'
+        position: 'bottom',
       },
       scales: {
         xAxes: [{
@@ -346,3 +338,37 @@ window.onload = function() {
   var ctx_2 = document.getElementById('chart_2').getContext('2d');
   window.myLine = new Chart(ctx_2, config);
 };
+
+// Randomized Dot Color
+var dots = document.getElementsByClassName('random-dot');
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+var i = 0;
+while(i<dots.length) {
+	var magicNumber = getRandomInt(3);
+	switch (magicNumber) {
+		case 0:
+			dots[i].classList.add('random-dot--viking');
+			break;
+		case 1:
+			dots[i].classList.add('random-dot--feijoa');
+			break;
+		case 2:
+			dots[i].classList.add('random-dot--sandy-brown');
+			break;
+	}	
+	i+=1;
+}
+
+// Hamburger Menu Toggle
+document.querySelector("#hamburger_button").addEventListener("click", function(){
+  var e = document.querySelector(".hamburger-menu-items");
+    if(e.style.display == 'block')
+       e.style.display = 'none';
+    else
+       e.style.display = 'block';
+
+});
