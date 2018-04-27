@@ -184,3 +184,40 @@ body {
     height: 1px;
     overflow: hidden;
 }
+
+// Data Sections
+.data-section-title {
+    background-color: $wild-sand;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 10px 12px;
+    margin: 10px 0;
+}
+
+// Tables
+table {
+    font-size: 10px;
+    width: 100%;
+}
+
+thead {
+    background-color: $polar;
+}
+
+tr, td, th {
+    padding: 8px 12px;
+}
+
+tbody tr {
+    border-bottom: 1px solid darken($polar, 5%);
+}
+
+.random-dot::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: $tangerine;
+    border-radius: 10px;
+}
